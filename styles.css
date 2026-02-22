@@ -1,0 +1,279 @@
+:root{
+  /* Fundo azul do jogo */
+  --bgTop: #163a6b;
+  --bgBottom:#3f5f93;
+
+  /* PainÃƒÂ©is brancos */
+  --panel:#ffffff;
+  --text:#0f2447;
+  --muted: rgba(15,36,71,.72);
+
+  /* Amarelo banner */
+  --gold:#FFC400;
+  --gold2:#FFB000;
+
+  /* BotÃƒÂµes azuis */
+  --btn1:#21487f;
+  --btn2:#14335f;
+
+  --stroke: rgba(15,36,71,.12);
+  --shadow: 0 14px 34px rgba(0,0,0,.18);
+  --shadowSoft: 0 10px 26px rgba(0,0,0,.14);
+
+  --r: 18px;
+  --rBtn: 16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, var(--bgTop), var(--bgBottom));
+  color: var(--text);
+}
+
+.wrap{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap: 12px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 12px 14px 20px;
+}
+
+/* Banner amarelo */
+.banner{
+  background: linear-gradient(180deg, var(--gold), var(--gold2));
+  border-radius: 18px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 18px 36px rgba(0,0,0,.18);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.banner-top{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  justify-content:center;
+  margin-bottom: 6px;
+}
+
+.trophy{
+  width: 34px; height: 34px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.35);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+.banner-title{
+  font-weight: 1000;
+  letter-spacing: -.01em;
+}
+
+.banner-sub{
+  text-align:center;
+  color: rgba(15,36,71,.92);
+  font-weight: 750;
+  line-height: 1.35;
+  font-size: 13.5px;
+}
+
+/* CabeÃƒÂ§alho branco */
+.panel{
+  background: var(--panel);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--stroke);
+  padding: 14px 14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.logo{
+  width: 54px; height: 54px;
+  border-radius: 16px;
+  display:grid; place-items:center;
+  font-weight: 1000;
+  letter-spacing: .5px;
+  color: #1a2f57;
+  background: linear-gradient(180deg, var(--gold), var(--gold2));
+  border: 2px solid rgba(0,0,0,.06);
+  box-shadow: 0 10px 18px rgba(0,0,0,.12);
+  flex: 0 0 auto;
+}
+
+h1{
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -.02em;
+}
+.muted{
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 13.5px;
+}
+
+/* NOVO: painel branco que envolve os botÃƒÂµes (estilo do jogo) */
+.games{
+  background: var(--panel);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--stroke);
+  padding: 12px;
+}
+
+.games-title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  font-weight: 1000;
+  color: var(--text);
+  margin: 4px 6px 10px;
+  letter-spacing: -.01em;
+}
+.games-title .dot{
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px rgba(255,196,0,.22);
+}
+
+.buttons{
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+/* BotÃƒÂµes: altura fixa + padding mais Ã¢â‚¬Å“appÃ¢â‚¬Â */
+.btn{
+  position:relative;
+  overflow:hidden;
+  text-decoration:none;
+  border-radius: var(--rBtn);
+  padding: 14px 14px 12px;
+  background: linear-gradient(180deg, var(--btn1), var(--btn2));
+  color: #ffffff;
+  box-shadow: var(--shadowSoft);
+  border: 1px solid rgba(255,255,255,.12);
+  font-weight: 950;
+
+  min-height: 86px;            /* altura padrÃƒÂ£o */
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  transform: translateZ(0);
+  transition: transform .14s ease, filter .14s ease;
+}
+
+.btn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(240px 130px at 15% 0%, rgba(255,196,0,.22), transparent 60%),
+    radial-gradient(260px 140px at 95% 20%, rgba(255,196,0,.14), transparent 60%);
+  opacity:.95;
+}
+
+/* Hover (desktop) e Ã¢â‚¬Å“tapÃ¢â‚¬Â (mobile) */
+.btn:hover{ filter: brightness(1.05); }
+.btn:active{ transform: scale(.985); }
+
+/* Linha de tÃƒÂ­tulo */
+.btn-row{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.icon{
+  width: 40px; height: 40px;
+  display:grid; place-items:center;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 14px;
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+
+.btn-title{
+  position:relative;
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  font-size: 16px;
+}
+
+.sub{
+  position:relative;
+  display:block;
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,.84);
+  font-weight: 800;
+}
+
+/* Ã¢â‚¬Å“Em breveÃ¢â‚¬Â mais claro */
+.disabled{
+  opacity: .60;
+  cursor: not-allowed;
+  filter: grayscale(.10);
+}
+.disabled:hover{ filter: grayscale(.10); }
+.disabled:active{ transform:none; }
+
+/* RodapÃƒÂ© */
+.foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 10px;
+  flex-wrap:wrap;
+  padding: 2px 4px 0;
+  color: rgba(255,255,255,.88);
+}
+
+.link{
+  appearance:none;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.10);
+  color: #ffffff;
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  cursor:pointer;
+}
+
+.small{
+  font-size: 12px;
+  color: rgba(255,255,255,.80);
+  font-weight: 750;
+}
+
+/* Melhorias pra telas pequenas */
+@media (max-width: 380px){
+  .wrap{ padding: 10px 12px 18px; }
+  .banner{ padding: 12px 12px 10px; }
+  .btn{ min-height: 82px; }
+  .btn-title{ font-size: 15px; }
+  .icon{ width: 38px; height: 38px; }
+}
+
+/* Movimento reduzido */
+@media (prefers-reduced-motion: reduce){
+  .btn{ transition:none; }
+}
