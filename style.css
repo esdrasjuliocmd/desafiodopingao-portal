@@ -1,0 +1,311 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0d0d1a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #e94560;
+  box-shadow: 0 4px 20px rgba(233, 69, 96, 0.3);
+}
+
+header .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+header .logo .logo-icon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 8px #e94560);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #e94560, #f5a623);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+header .tagline {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #a0a8c0;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Navigation ===== */
+nav {
+  background-color: #12122a;
+  padding: 0.6rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #1e1e40;
+}
+
+nav a {
+  color: #a0a8c0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #e94560;
+  background-color: rgba(233, 69, 96, 0.1);
+}
+
+/* ===== Main Content ===== */
+main {
+  flex: 1;
+  padding: 2.5rem 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e94560;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== Games Grid ===== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* ===== Game Card / Button ===== */
+.game-card {
+  background: linear-gradient(145deg, #1a1a3e, #1e1e4a);
+  border: 1px solid #2a2a5a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8rem 1rem 1.4rem;
+  text-align: center;
+  position: relative;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #e94560, #f5a623);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  border-radius: 12px 12px 0 0;
+}
+
+.game-card:hover,
+.game-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(233, 69, 96, 0.35);
+  border-color: #e94560;
+  outline: none;
+}
+
+.game-card:hover::before,
+.game-card:focus::before {
+  transform: scaleX(1);
+}
+
+.game-card .game-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 6px rgba(233, 69, 96, 0.6));
+}
+
+.game-card .game-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+}
+
+.game-card .game-desc {
+  font-size: 0.8rem;
+  color: #7a82a0;
+  line-height: 1.4;
+}
+
+.game-card .badge {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-new {
+  background-color: rgba(233, 69, 96, 0.2);
+  color: #e94560;
+  border: 1px solid #e94560;
+}
+
+.badge-popular {
+  background-color: rgba(245, 166, 35, 0.2);
+  color: #f5a623;
+  border: 1px solid #f5a623;
+}
+
+.badge-coming-soon {
+  background-color: rgba(100, 100, 160, 0.2);
+  color: #8888cc;
+  border: 1px solid #8888cc;
+}
+
+/* ===== Hero Banner ===== */
+.hero-banner {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  border: 1px solid #2a2a5a;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner::after {
+  content: '🎮';
+  position: absolute;
+  font-size: 10rem;
+  opacity: 0.04;
+  right: -1rem;
+  bottom: -2rem;
+  pointer-events: none;
+}
+
+.hero-banner h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(90deg, #ffffff, #c0c8e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-banner p {
+  font-size: 1rem;
+  color: #a0a8c0;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #e94560, #c0392b);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 18px rgba(233, 69, 96, 0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(233, 69, 96, 0.65);
+  outline: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #0a0a18;
+  border-top: 1px solid #1e1e40;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: #4a5278;
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: #6a72a0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e94560;
+}
+
+/* ===== Disabled (coming soon) card ===== */
+.game-card--disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-banner h2 {
+    font-size: 1.4rem;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}

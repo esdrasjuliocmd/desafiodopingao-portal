@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Desafio do Pingão – Portal oficial de jogos. Acesse todos os jogos a partir deste portal exclusivo." />
+  <meta name="keywords" content="desafio do pingão, jogos, portal, desafiodopingao.com.br" />
+  <meta name="author" content="Desafio do Pingão" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Desafio do Pingão – Portal de Jogos" />
+  <meta property="og:description" content="Portal oficial de jogos do Desafio do Pingão. Todos os jogos em um só lugar!" />
+  <meta property="og:url" content="https://desafiodopingao.com.br" />
+  <meta property="og:type" content="website" />
+
+  <title>Desafio do Pingão – Portal de Jogos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <a href="index.html" class="logo" aria-label="Ir para a página inicial">
+      <span class="logo-icon" aria-hidden="true">🐧</span>
+      <h1>Desafio do Pingão</h1>
+    </a>
+    <p class="tagline">Portal Oficial de Jogos · desafiodopingao.com.br</p>
+  </header>
+
+  <!-- ===== Navigation ===== -->
+  <nav aria-label="Menu principal">
+    <a href="#jogos">Jogos</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner" aria-label="Boas-vindas">
+      <h2>Bem-vindo ao Portal do Pingão!</h2>
+      <p>
+        Aqui você encontra todos os jogos do <strong>Desafio do Pingão</strong> em um só lugar.
+        Escolha um jogo abaixo e divirta-se!
+      </p>
+      <a href="#jogos" class="hero-btn">Ver Jogos 🎮</a>
+    </section>
+
+    <!-- ===== Jogos em Destaque ===== -->
+    <section id="jogos" aria-labelledby="titulo-jogos">
+      <h2 class="section-title" id="titulo-jogos">🕹️ Jogos</h2>
+      <div class="games-grid">
+
+        <!-- Jogo 1 -->
+        <a href="#" class="game-card" aria-label="Jogar Pingão Aventura">
+          <span class="game-icon" aria-hidden="true">🐧</span>
+          <span class="game-name">Pingão Aventura</span>
+          <span class="game-desc">Guie o Pingão pela aventura mais épica do gelo!</span>
+          <span class="badge badge-popular">Popular</span>
+        </a>
+
+        <!-- Jogo 2 -->
+        <a href="#" class="game-card" aria-label="Jogar Pingão Corrida">
+          <span class="game-icon" aria-hidden="true">🏃</span>
+          <span class="game-name">Pingão Corrida</span>
+          <span class="game-desc">Corra e desvie dos obstáculos com o Pingão!</span>
+          <span class="badge badge-new">Novo</span>
+        </a>
+
+        <!-- Jogo 3 -->
+        <a href="#" class="game-card" aria-label="Jogar Pingão Quiz">
+          <span class="game-icon" aria-hidden="true">❓</span>
+          <span class="game-name">Pingão Quiz</span>
+          <span class="game-desc">Teste seus conhecimentos nos desafios de perguntas!</span>
+          <span class="badge badge-popular">Popular</span>
+        </a>
+
+        <!-- Jogo 4 -->
+        <a href="#" class="game-card" aria-label="Jogar Pingão Puzzle">
+          <span class="game-icon" aria-hidden="true">🧩</span>
+          <span class="game-name">Pingão Puzzle</span>
+          <span class="game-desc">Monte os quebra-cabeças do universo Pingão.</span>
+          <span class="badge badge-new">Novo</span>
+        </a>
+
+        <!-- Jogo 5 -->
+        <div class="game-card game-card--disabled" aria-label="Pingão Batalha – Em Breve" aria-disabled="true">
+          <span class="game-icon" aria-hidden="true">⚔️</span>
+          <span class="game-name">Pingão Batalha</span>
+          <span class="game-desc">Enfrente inimigos e vença as batalhas do gelo!</span>
+          <span class="badge badge-coming-soon">Em Breve</span>
+        </div>
+
+        <!-- Jogo 6 -->
+        <div class="game-card game-card--disabled" aria-label="Pingão Memória – Em Breve" aria-disabled="true">
+          <span class="game-icon" aria-hidden="true">🃏</span>
+          <span class="game-name">Pingão Memória</span>
+          <span class="game-desc">Exercite a memória com as cartas do Pingão!</span>
+          <span class="badge badge-coming-soon">Em Breve</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer id="sobre">
+    <p>
+      &copy; <span id="ano"></span> Desafio do Pingão &mdash;
+      <a href="https://desafiodopingao.com.br" rel="noopener">desafiodopingao.com.br</a>
+    </p>
+    <p style="margin-top: 0.4rem;">Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
